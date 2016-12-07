@@ -10,7 +10,6 @@ public class LinkedDeque<E> {
 
 	private Node<E> first;
 	private Node<E> last;
-	private int size;
 
 	/**
 	 * Create a new LinkedDeque object.
@@ -18,7 +17,6 @@ public class LinkedDeque<E> {
 	public LinkedDeque() {
 		first = null;
 		last = null;
-		size = 0;
 	}
 
 	/**
@@ -35,7 +33,6 @@ public class LinkedDeque<E> {
 			throw new IllegalArgumentException("null values may not be added to the LinkedDeque.");
 
 		Node<E> newNode = new Node<E>(null, val, first);
-		size++;
 
 		// special case: was an empty Deque
 		if (last == null)
@@ -60,7 +57,6 @@ public class LinkedDeque<E> {
 			throw new IllegalArgumentException("null values may not be added to the LinkedDeque.");
 
 		Node<E> newNode = new Node<E>(last, val, null);
-		size++;
 
 		// special case: was an empty Deque
 		if (first == null)
@@ -199,7 +195,6 @@ public class LinkedDeque<E> {
 			first.prev = null;
 		}
 
-		size--;
 		return val;
 	}
 
@@ -227,7 +222,6 @@ public class LinkedDeque<E> {
 			last.next = null;
 		}
 
-		size--;
 		return val;
 	}
 
