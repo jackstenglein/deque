@@ -8,6 +8,8 @@
  */
 public class LinkedDeque<E> {
 
+	// instance variables
+	// first == last == null iff the LinkedDeque is empty
 	private Node<E> first;
 	private Node<E> last;
 
@@ -111,6 +113,8 @@ public class LinkedDeque<E> {
 			// checked values so far were the same, so just return whether
 			// we went through all values in both Deques
 			return otherTemp == null && thisTemp == null;
+		} else if(other instanceof ArrayBasedDeque) {
+			return toString().equals(other.toString());
 		}
 
 		return false;
